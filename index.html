@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+<head >
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>后台管理系统</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<!------导航栏----------->
+  <div class="navbar navbar-default">    <!--navbar是导航条组件，导航条组件为黑色主题-->
+    <div class="navbar-header">     <!--navbar-header指定div元素为导航条组件包裹品牌图标及切换按钮-->
+         <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"> 
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a href="#" class="navbar-brand">管理后台</a>  
+    </div>
+    <!--屏幕宽度小于768px时，该div内的内容默认都会隐藏（通过点击上面的button时展开），大于768px时默认显示-->
+    <div class="collapse navbar-collapse navbar-left row" style="width:80%;">
+          <ul class="nav navbar-nav col-xs-7">
+            <li  class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 后台首页</a></li>
+            <li><a href="user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a></li>
+            <li><a href="content.html"><span class="glyphicon glyphicon-list-alt"></span> 内容管理</a></li>
+            <li><a href="set%20up.html"><span class="glyphicon glyphicon-cog"></span> 网站设置</a></li>
+          </ul>
+
+        <form class="navbar-form col-xs-4 hidden-sm" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="button"> 搜索</button>
+        </form>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+          <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              admin
+              <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dLabel">
+              <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>前台首页</a> </li>
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> 个人主页</a> </li>
+              <li><a href="#"><span class="glyphicon glyphicon-cog"></span> 个人设置</a> </li>
+              <li><a href="#"><span  class="glyphicon glyphicon-blackboard"></span> 账户中心</a> </li>
+              <li><a href="#"><span class="glyphicon glyphicon-folder-open"></span> 我的收藏</a> </li>
+          </ul>
+      </li>
+          <li><a href="#"><span class="glyphicon glyphicon-off">退出</span> </a> </li>
+      </ul>
+      </div>
+</div>
+<!------警告框----------->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-danger alert-dismissible fade in" role="alert"><!-----警告框样式------>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4>网站程序有漏洞，急需修复！</h4>
+                <p>当前版本号（v1.2.3）存在严重安全问题，容易受到攻击，请及时修复！</p>
+                <p>
+                    <button type="button" class="btn btn-danger">立即修复</button>
+                    <button type="button" class="btn btn-default" data-dismiss="alert" >稍后处理</button><!-----关闭------>
+                </p>
+            </div>
+        </div>
+
+<!-----------网站统计数据和网站热帖------------>
+        <div class="col-md-6">
+            <div class="panel panel-default"><!-----面板------>
+                <div class="panel-heading">网站统计数据</div>    <!----标题------>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead><!-----表单------>
+                        <tr>
+                            <th>统计数据</th>
+                            <th>今日</th>
+                            <th>昨日</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>注册会员</th>
+                            <td>183</td>
+                            <td>145</td>
+                        </tr>
+                        <tr>
+                            <th>登录会员</th>
+                            <td>1830</td>
+                            <td>1510<td>
+                        </tr>
+                        <tr>
+                            <th>发帖数量</th>
+                            <td>2347</td>
+                            <td>3759</td>
+                        </tr>
+                        <tr>
+                            <th>转载次数</th>
+                            <td>964</td>
+                            <td>839</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">网站热帖</div>
+                   <ul class="list-group">
+                       <li class="list-group-item">
+                           <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span> 回顾雷霆11年队史的11次大运作<small class="pull-right">2020/06/04</small> </a><!-----日期变小，右浮动------>
+                       </li>
+                       <li class="list-group-item">
+                           <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span> 俯仰之间，已为陈迹：雷霆球迷对杜兰特的感受<small class="pull-right">2020/03/05</small> </a>
+                       </li>
+                       <li class="list-group-item">
+                           <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span> 不愧是你呀，威斯布鲁克<small class="pull-right">2020/02/24</small> </a>
+                       </li>
+                       <li class="list-group-item">
+                           <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span> 亚当斯用中文发推致敬中国的医务人员<small class="pull-right">2020/01/25</small> </a>
+                       </li>
+                       <li class="list-group-item">
+                           <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span>7A雷霆小漫画（四）<small class="pull-right">2019/12/17</small> </a>
+                       </li>
+                       <li class="list-group-item">
+                           <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span> 请拿一个总冠军，@雷霆官方<small class="pull-right">2019/09/24</small> </a>
+                       </li>
+                   </ul>
+                </div>
+            </div>
+<!---------今日访客统计和服务器状态--------->
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">今日访客统计</h3><!----------数据统计在最底下引入chart.js和引入曲线图js格式代码----------->
+                    </div>
+                    <div class="panel-body">
+                        <canvas id="myChart" width="400" height="200"></canvas><!---------画布------->
+                    </div>
+                    <canvas id="gradientChart" width="537" height="30" class="chartjs-render-monitor" style="display: block; height:auto; width: 430px;"></canvas>
+                </div>
+            </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">服务器状态</h3><!----------根据情境变化效果的进度条----------->
+                </div>
+                <div class="panel-body">
+                    <p>内存使用率：40%</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                            <span class="sr-only">40% Complete (success)</span>
+                        </div>
+                    </div>
+                    <p>数据库使用率：20%</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                            <span class="sr-only">20% Complete</span>
+                        </div>
+                    </div>
+                    <p>磁盘使用率：60%</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                            <span class="sr-only">60% Complete (warning)</span>
+                        </div>
+                    </div>
+                    <p>CPU使用率：80%</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                            <span class="sr-only">80% Complete (danger)</span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </div>
+                    <div class="col-md-12">
+                        <div class="panel panel-default"> <!------------面板--------->
+                            <div class="panel-heading">
+                                <h3 class="panel-title">团队留言板</h3><!----------设置下面布局为左8右4----------->
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-8">
+                                    <ul class="media-list">
+                                        <li class="media well">
+                                            <div class="media-left">
+                                                <a href="#">
+                                                    <img class="img-circle" src="img/1.jpg"  alt="图像"><!-------------头像设为圆形------------>
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">李哥</h4>
+                                                黄老师，麻烦今天晚上把网站升级一下，有漏洞风险哈。
+                                            </div>
+                                        </li>
+                                        <li class="media well">
+                                            <div class="media-body text-right">
+                                                <h4 class="media-heading">黄老师</h4>
+                                                好的，今天凌晨2点准时升级。
+                                            </div>
+                                            <div class="media-right">
+                                                <a href="#">
+                                                    <img class="img-circle" src="img/2.jpg"  alt="图像">
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="media well">
+                                            <div class="media-left">
+                                                <a href="#">
+                                                    <img class="img-circle" src="img/1.jpg"  alt="图像">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading">李哥</h4>
+                                                黄老师，麻烦今天晚上把网站升级一下，有漏洞风险哈。
+                                            </div>
+                                        </li>
+                                        <li class="media well">
+                                            <div class="media-body text-right">
+                                                <h4 class="media-heading">黄老师</h4>
+                                                好的，今天凌晨2点准时升级。
+                                            </div>
+                                            <div class="media-right">
+                                                <a href="#">
+                                                    <img class="img-circle" src="img/2.jpg"  alt="图像">
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <form action="#" class="form form-group">
+                                            <label for="liuyan">输入留言内容</label>
+                                            <textarea name="liuyan" id="liuyan" cols="10" rows="6" class="form-control" placeholder="输入留言内容"></textarea><!------------提示信息--------->
+                                            <button type="button" class="btn btn-primary" data-toggle="button"> 留言</button>
+                                        </form>
+                                    </div>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">团队联系手册</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item">站长（黄朝杰）：<span class="glyphicon glyphicon-phone"></span>&nbsp;17868044544</li>
+                                                <li class="list-group-item">技术1（黄 朝 ）：<span class="glyphicon glyphicon-phone"></span>&nbsp;13242777351</li>
+                                                <li class="list-group-item">技术2（黄 杰 ）：<span class="glyphicon glyphicon-phone"></span>&nbsp;18823046253</li>
+                                                <li class="list-group-item">推广（李大力 ）：<span class="glyphicon glyphicon-phone"></span>&nbsp;15738471443</li>
+                                                <li class="list-group-item">客服（李小龙）：<span class="glyphicon glyphicon-phone-alt"></span>&nbsp;020-4698374</li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!-------页脚------>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p style="text-align: center">版权所有@1830510黄朝杰</p>
+        </div>
+    </div>
+</div>
+
+            <script src="js/Chart.js"></script><!-----引入Chart------>
+            <script src="js/plot.js"></script><!-----引入曲线图js格式代码------>
+    </div>
+    </div>
+</body>
+</html>
